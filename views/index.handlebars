@@ -1,0 +1,44 @@
+<div class="container">
+	<h4> Hear are some Articles Scraped from The Wall Street Journal! </h4>
+	
+	<br>
+		<button class="scrape"> Scrape </button>
+	<br>
+
+	{{#each articleData}} 
+		{{> news-partial}}
+	 {{/each}} 
+
+
+</div>
+
+<script> 
+	$(".delete").on("click", function(event) {
+		console.log("it clicked");
+
+	
+	var id = $(this).data("id");
+	console.log(id);
+
+
+	$.ajax("/" + id, {
+		method: "DELETE"
+	}).then(() => {
+		console.log("article Deleted");
+		
+	});
+
+	location.reload();
+
+});
+
+	// $(".scrape").on("click", function(event){
+	// 	console.log("scraping");
+	// });
+
+
+
+
+
+</script>
+

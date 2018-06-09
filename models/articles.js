@@ -22,6 +22,6 @@ const artSchema = new Schema ({
 	}
 });
 
-const article = mongoose.model("article", artSchema);
+const articles = mongoose.model("articles", artSchema);
 
-module.exports = article;
+module.exports = articles;
